@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-fraunces: 'Fraunces', Georgia, serif;
+    --font-inter: 'Inter', system-ui, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream font-sans text-ink antialiased;
+  }
+
+  ::selection {
+    @apply bg-forest-soft text-forest-deep;
+  }
+}
+
+@layer components {
+  /* Centered content column with generous gutters */
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-6 sm:px-8;
+  }
+
+  /* Small uppercase label / eyebrow */
+  .eyebrow {
+    @apply font-sans text-xs font-semibold uppercase tracking-label text-muted;
+  }
+
+  /* Hairline divider */
+  .hairline {
+    @apply border-line;
+  }
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-12vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) rotate(680deg);
+    opacity: 0.9;
+  }
+}

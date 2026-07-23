@@ -1,0 +1,17 @@
+{
+  "name": "@jk/config",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "files": [
+    "tsconfig",
+    "tailwind"
+  ],
+  "exports": {
+    "./tailwind-preset": "./tailwind/preset.ts",
+    "./tsconfig/*": "./tsconfig/*"
+  },
+  "dependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

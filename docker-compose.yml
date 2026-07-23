@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: jackfruit_king_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: jackfruit
+      POSTGRES_PASSWORD: jackfruit
+      POSTGRES_DB: jackfruit_king
+    ports:
+      - "5432:5432"
+    volumes:
+      - jackfruit_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U jackfruit -d jackfruit_king"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  jackfruit_pgdata:

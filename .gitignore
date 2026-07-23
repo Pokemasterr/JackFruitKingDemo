@@ -1,0 +1,35 @@
+# deps
+node_modules
+.pnpm-store
+
+# builds
+.next
+out
+dist
+.turbo
+
+# env
+.env
+.env*.local
+
+# prisma
+packages/db/prisma/*.db
+
+# misc
+.DS_Store
+*.log
+npm-debug.log*
+coverage
+.vscode/*
+!.vscode/extensions.json
+
+# local tooling / editor agent config
+.claude
+
+# working materials, not part of the app
+presentation/
+report/
+jackfruitking-mockup.html
+
+# typescript incremental build cache
+*.tsbuildinfo
