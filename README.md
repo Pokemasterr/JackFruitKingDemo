@@ -35,37 +35,6 @@ packages/config     tsconfig bases + Tailwind preset        (@jk/config)
 
 All are wired in one place: `packages/core/src/providers.ts`.
 
-## Getting started
-
-```bash
-# 1. Install
-pnpm install
-
-# 2. Start Postgres (needs Docker) — or point DATABASE_URL at Neon/Supabase
-pnpm db:up
-
-# 3. Generate client, create tables, seed catalog
-pnpm db:generate
-pnpm db:push
-pnpm db:seed
-
-# 4. Run the app
-pnpm dev            # → http://localhost:3000
-```
-
-Copy `.env.example` to `.env` (already present for local dev). Seed data
-includes 6 jackfruit-chip flavors and the `WELCOME10` coupon.
-
-## Handy scripts
-
-| Command | What |
-|---|---|
-| `pnpm dev` | Run all dev servers via Turbo |
-| `pnpm build` | Build everything |
-| `pnpm typecheck` | Type-check every package |
-| `pnpm db:studio` | Open Prisma Studio |
-| `pnpm db:reset` | Drop, re-push, re-seed |
-
 ## Build order
 
 scaffold → home → shop + search → product detail → cart drawer → checkout
