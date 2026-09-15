@@ -57,6 +57,14 @@ pnpm dev            # → http://localhost:3000
 Stop it with `Ctrl+C`. First page load compiles on demand and takes a few
 seconds; it's fast after that.
 
+> **If `pnpm install` fails with `ERR_PNPM_BROKEN_PNPM_RELEASE`:** pnpm
+> occasionally flags one of its own past releases as broken after the fact.
+> If that happens to land on whatever version this repo's root `package.json`
+> pins under `"packageManager"`, every fresh install breaks until it's
+> re-pinned. Fix: open the root `package.json`, bump the `packageManager`
+> version to a newer pnpm release (check `npm view pnpm dist-tags`), then
+> re-run `pnpm install`. This isn't a problem with your machine.
+
 ### With the database (optional, for Prisma/Postgres work)
 
 Only needed if you're working on the `@jk/db` schema itself or wiring a real
@@ -110,3 +118,7 @@ rather than Postgres.
 
 **Mocked at the seam only:** payment capture, OTP delivery, outbound email,
 shipping estimates — see "Provider seams" above.
+
+**Not yet built:** customer accounts / login, live order tracking, real
+product photography (placeholder tiles), nationwide pincode coverage (a
+handful of pincodes are seeded).
